@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const morganBody = require('morgan-body')
 
-const APP_PORT = 4000
+const APP_PORT = 4000 
 
 const app = express()
 
