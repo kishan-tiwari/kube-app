@@ -10,7 +10,7 @@
     "containerDefinitions": [
         {
             "name": "kube-app",
-            "image": "728291931126.dkr.ecr.us-east-1.amazonaws.com/kube-app:8059619-v15",
+            "image": "728291931126.dkr.ecr.us-east-1.amazonaws.com/kube-app:0eddab4-v16",
             "portMappings": [
                 {
                     "containerPort": 4000,
