@@ -10,7 +10,8 @@
     "containerDefinitions": [
         {
             "name": "kube-app",
-            "image": "728291931126.dkr.ecr.us-east-1.amazonaws.com/kube-app:0eddab4-v16",
+            "image": "728291931126.dkr.ecr.us-east-1.amazonaws.com/kube-app:274e0f9-v17",
+            "essential": true,
             "portMappings": [
                 {
                     "containerPort": 4000,
@@ -33,7 +34,41 @@
                     "awslogs-stream-prefix": "ecs"
                 }
             }
-        }
+        },
+        {
+            "name": "nginx",
+            "image": "728291931126.dkr.ecr.us-east-1.amazonaws.com/nginx-sidecar:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": [
+                {
+                    "name": "ENV",
+                    "value": "Prod"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/kube-app-demo",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "dependsOn": [
+    {
+        "containerName": "kube-app",
+        "condition": "START"
+    }
+          ]
+
+             }
     ]
 }
 
