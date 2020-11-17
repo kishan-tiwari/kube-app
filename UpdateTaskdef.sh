@@ -17,7 +17,7 @@ if [[ ${DESIRED_COUNT} = "0" ]]; then
  
 fi
  
-aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count ${DESIRED_COUNT}
+aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count ${DESIRED_COUNT}  > /dev/null
  
 #rm deployment/task-definitions/production/sp-spinny-web-prod-task-v${BUILD_NUMBER}-${IMAGE_TYPE}.json
 
