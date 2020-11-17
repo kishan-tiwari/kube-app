@@ -39,6 +39,7 @@
         {
             "name": "nginx",
             "image": "728291931126.dkr.ecr.us-east-1.amazonaws.com/nginx-sidecar:latest",
+            "memory": "128",
             "essential": true,
             "portMappings": [
                 {
