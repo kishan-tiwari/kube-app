@@ -3,6 +3,8 @@ TASK_FAMILY="kube-app-demo"
 SERVICE_NAME="kube-app-svc"
 CLUSTER_NAME="kube-app-cluster"
 
+
+
 sed -e "s;%BUILD_NUMBER%;$IMAGE_TAG;g" taskdef.json > taskdef-${IMAGE_TAG}.json
 
 aws ecs register-task-definition --family ${TASK_FAMILY} --cli-input-json file://taskdef-${IMAGE_TAG}.json  > /dev/null
