@@ -13,7 +13,7 @@ phases:
       - aws --version
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - IMAGE_TAG=v$CODEBUILD_BUILD_NUMBER-stable
+      - IMAGE_TAG=v$CODEBUILD_BUILD_NUMBER-$IMAGE_TYPE
   build:
     commands:
       - echo Build started on `date`
