@@ -11,7 +11,7 @@ TASK_REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY}
  
 DESIRED_COUNT=`aws ecs describe-services --cluster ${CLUSTER_NAME} --services ${SERVICE_NAME} | egrep "desiredCount" | tr "/" " " | awk '{print $2}'| sed 's/,//' | head -n 1`
  
-if [ ${DESIRED_COUNT} = "0" ]; then
+if [[ ${DESIRED_COUNT} = "0" ]]; then
   
   DESIRED_COUNT="1"
  
