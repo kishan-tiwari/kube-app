@@ -1,5 +1,5 @@
 #!/bin/bash
-TASK_FAMILY="kube-app"
+TASK_FAMILY="kube-app-demo"
 SERVICE_NAME="kube-app-svc"
 NEW_DOCKER_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"
 CLUSTER_NAME="kube-app"
