@@ -1,5 +1,5 @@
 {
-    "family": "kube-app-demo",
+    "family": "kube-app",
     "executionRoleArn": "arn:aws:iam::728291931126:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "cpu": "256",
@@ -29,7 +29,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/kube-app-demo",
+                    "awslogs-group": "/ecs/kube-app",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
@@ -56,7 +56,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/kube-app-demo",
+                    "awslogs-group": "/ecs/kube-app",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
